@@ -1,37 +1,23 @@
 #include<iostream>
 using namespace std;
-class tv
-{
-    //public:
-    private:
-    bool ison;
-    public:
-    void control(bool x)
-    {
-        ison=x;
-    }
-    void getsetup()
-    {
-        if(ison )
-        {cout<<"tv is on";
-        }
-        else{
-            {cout<<"tv is off";
-        }
-        }
-    }
-};
-class remote
+class student
 {
     public:
-    void controltv(tv &a,bool x)
+    string name;
+    static int count;
+    student(string n):name(n)
     {
-        a.control(x);
+        count++;
+        cout<<"student created:"<<count<<endl;
+    
     }
 };
+int student::count=0;//initialization of static variable
 int main()
 {
-    tv t1;
-    remote r1;
-    r1.controltv(t1,true);
+
+    student  s1("JAYA");
+    student  s2("RISHIKA");
+    student  s3("SHANTI");
+    student  s4("PRIYA");
 }
