@@ -1,23 +1,36 @@
+//GIVEN A CLASS RECTANGLE WITH  2 ATTRIBUTES LENGTH AND BREATH WITH METHOD TO CALCULATE
+// AREA AND PARAMETER OF RECTANGLE ALSO
+// DEMONSTRATE THE USE  THESE METHOD IN A SAMPLE PROGRAM
 #include<iostream>
 using namespace std;
-class student
+class rectangle
 {
     public:
-    string name;
-    static int count;
-    student(string n):name(n)
+    int length,breath;
+    rectangle()
     {
-        count++;
-        cout<<"student created:"<<count<<endl;
-    
+        //length=breath=1;
+    }
+    rectangle(int x,int y)
+    {
+        length=x;
+        breath=y;
+    }
+    void area()
+    {
+        int area=length*breath;
+        cout<<"area of rectangle="<<area<<endl;
+        
+    }
+    void parameter()
+    {
+        int parameter=2*(length+breath);
+         cout<<"parameter of rectangle="<<parameter<<endl;
     }
 };
-int student::count=0;//initialization of static variable
 int main()
 {
-
-    student  s1("JAYA");
-    student  s2("RISHIKA");
-    student  s3("SHANTI");
-    student  s4("PRIYA");
+  rectangle r1(5,4);
+  r1.area();
+  r1.parameter();  
 }
