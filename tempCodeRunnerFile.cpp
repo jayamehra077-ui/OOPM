@@ -16,11 +16,13 @@ class rectangle
     rectangle()
     {
         cout<<"-----default constructor called-------";
+        cout<<"\n";
         length=breath=1;
     }
     rectangle(int x,int y)
     {
         cout<<"----parameterised constructor called---";
+        cout<<"\n";
         length=x;
         breath=y;
     }
@@ -28,12 +30,14 @@ class rectangle
     {
         int area=length*breath;
         cout<<"area of rectangle="<<area<<endl;
+        cout<<"\n";
         
     }
     void parameter()
     {
         int parameter=2*(length+breath);
          cout<<"parameter of rectangle="<<parameter<<endl;
+         cout<<"\n";
     }
 };
 
