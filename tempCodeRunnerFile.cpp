@@ -32,11 +32,13 @@ void run_appliance(appliance*ptr)
 }
 int main()
 {
-    appliance*obj1=new toaster;
-    appliance*obj2=new oven;
-    run_appliance(obj1);
-    run_appliance(obj2);
+   // appliance*obj1=new toaster;
+   // appliance*obj2=new oven;
+   // run_appliance(obj1);
+   // run_appliance(obj2);
+    appliance*t[2]={new toaster,new oven};//hetrogenous array
+    for(int i=0;i<2;i++)
     {
-
+      t[i]->start();
     }
 }
