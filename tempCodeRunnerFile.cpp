@@ -1,41 +1,42 @@
-#include<iostream>//ambiguity=confusion.
-using namespace std;
-class car
+//write a c++ program to demonstrate dynamic polymorphism & dynamic dispatch
+//dynamic dispatch means jo base class k through call hua h wah run time show hoga
+#include<iostream>
+using namespace std; 
+class appliance
+{
+  public:
+ virtual void start()
+  {
+cout<<"---GENERIC APPLIANCE---"<<endl;
+  }
+};
+class toaster:public appliance
 {
     public:
-    string fueltype;
-    car()
-    {
-
-    }
     void start()
-    {
-        cout<<"----car start!!!!!!!!-----";
-        cout<<"\n";
-    }
-    void stop()
-    {
-         cout<<"----car stop!!!!!!!-----";
-          cout<<"\n";
-    }
+  {
+    cout<<"--TOASTER COILS HEATING UP--"<<endl;
+  }
 };
-class familyCar:virtual public car
+class oven:public appliance
 {
-     
+    public:
+    void start()
+  {
+    cout<<"--OVEN PREHEATING--"<<endl;
+  }
 };
-class sportsCar:virtual public car
+void run_appliance(appliance*ptr)
 {
-
-};
-class suv:public familyCar,public sportsCar
-{
-  
-};
+  ptr->start();
+}
 int main()
 {
-    suv s1;
-    s1.fueltype="petrol";
-    ////------ERROR-------
-    s1.start();
-    s1.stop();
+    appliance*obj1=new toaster;
+    appliance*obj2=new oven;
+    run_appliance(obj1);
+    run_appliance(obj2);
+    {
+
+    }
 }
