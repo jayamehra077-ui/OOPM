@@ -5,40 +5,43 @@ using namespace std;
 class appliance
 {
   public:
- virtual void start()
+  appliance()
   {
-cout<<"---GENERIC APPLIANCE---"<<endl;
+    cout<<"---APPLIANCE CREATED---"<<endl;
+  }
+  ~appliance()
+  {
+     cout<<"---APPLIANCE DESTROYED---"<<endl;
   }
 };
 class toaster:public appliance
 {
     public:
-    void start()
+  toaster()
   {
-    cout<<"--TOASTER COILS HEATING UP--"<<endl;
+    cout<<"---TOASTER CREATED---"<<endl;
+  }
+  ~toaster()
+  {
+     cout<<"---TOASTER  DESTROYED---"<<endl;
   }
 };
 class oven:public appliance
 {
     public:
-    void start()
+ oven()
   {
-    cout<<"--OVEN PREHEATING--"<<endl;
+    cout<<"---OVEN CREATED---"<<endl;
+  }
+  ~oven()
+  {
+     cout<<"---OVEN DESTROYED---"<<endl;
   }
 };
-void run_appliance(appliance*ptr)
-{
-  ptr->start();
-}
+
 int main()
 {
-   // appliance*obj1=new toaster;
-   // appliance*obj2=new oven;
-   // run_appliance(obj1);
-   // run_appliance(obj2);
-    appliance*t[2]={new toaster,new oven};//hetrogenous array
-    for(int i=0;i<2;i++)
-    {
-      t[i]->start();
-    }
+  //appliance*obj;//=new toaster;
+  oven obj;
+
 }
