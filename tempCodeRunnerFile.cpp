@@ -9,7 +9,7 @@ class appliance
   {
     cout<<"---APPLIANCE CREATED---"<<endl;
   }
-  ~appliance()
+  virtual ~appliance()
   {
      cout<<"---APPLIANCE DESTROYED---"<<endl;
   }
@@ -41,7 +41,7 @@ class oven:public appliance
 
 int main()
 {
-  //appliance*obj;//=new toaster;
-  oven obj;
+  appliance*obj=new oven;
+  delete obj;
 
 }
